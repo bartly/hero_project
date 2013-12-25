@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <filePath>F:\cocostudio_pro\hero\hero.xml.ui</filePath>
+  <Version>1.1.0.0</Version>
+  <Name>hero</Name>
+  <ProjectDir>F:\cocostudio_pro\hero</ProjectDir>
+  <JsonFileName>hero.json</JsonFileName>
+  <Resources>F:\cocostudio_pro\hero\Resources</Resources>
+  <JsonFolder>F:\cocostudio_pro\hero\Json</JsonFolder>
+  <JsonList>
+    <string>hero_1.json</string>
+  </JsonList>
+  <imageFileList>
+    <string>hero0.plist</string>
+  </imageFileList>
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson>hero_1.json</CurrentUIJson>
+  <CanvasSize>
+    <Width>640</Width>
+    <Height>960</Height>
+  </CanvasSize>
+</UIProject>
