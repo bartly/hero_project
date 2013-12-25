@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <filePath>F:\cocostudio_pro\hero\hero.xml.ui</filePath>
+  <filePath>E:\hero\hero_project\doc\tools\hero\hero.xml.ui</filePath>
   <Version>1.1.0.0</Version>
   <Name>hero</Name>
-  <ProjectDir>F:\cocostudio_pro\hero</ProjectDir>
+  <ProjectDir>E:\hero\hero_project\doc\tools\hero</ProjectDir>
   <JsonFileName>hero.json</JsonFileName>
-  <Resources>F:\cocostudio_pro\hero\Resources</Resources>
-  <JsonFolder>F:\cocostudio_pro\hero\Json</JsonFolder>
+  <Resources>E:\hero\hero_project\doc\tools\hero\Resources</Resources>
+  <JsonFolder>E:\hero\hero_project\doc\tools\hero\Json</JsonFolder>
   <JsonList>
     <string>hero_1.json</string>
   </JsonList>
