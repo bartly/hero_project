@@ -50,6 +50,7 @@ samples/Cpp/TestCpp/proj.nacl/out/
 samples/Cpp/SimpleGame/proj.nacl/Resources/
 samples/Lua/HelloLua/proj.nacl/Resources/
 samples/Lua/TestLua/proj.nacl/Resources/
+cocos2d-x/
 
 # Ignore python compiled files
 *.pyc
