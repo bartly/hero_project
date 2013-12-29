@@ -19,6 +19,7 @@ private:
     void touchMoveEvent(cocos2d::extension::UIWidget* pEquip);
     void touchEndedEvent(cocos2d::extension::UIWidget* pEquip);
 	void initUILayer();
+    void initSqlite();
     void initTestUILayer();
 	void initArmature();
 	void initArmatureOriginEquips();

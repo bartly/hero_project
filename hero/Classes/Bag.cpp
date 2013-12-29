@@ -1,4 +1,5 @@
 #include "Bag.h"
+#include "sqlite3.h"
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
@@ -37,6 +38,8 @@ Bag* Bag::create()
 bool Bag::init()
 {
 	if(!CCLayer::init()) return false;
+    
+    initSqlite();
 
 	initTestUILayer();
     
@@ -47,6 +50,50 @@ bool Bag::init()
 	initPlayerEquipGrid();
 
 	return true;
+}
+
+void Bag::initSqlite()
+{
+//    char* a[1] = {0};
+//    sqlite_main(0, &a[0]);
+    
+    sqlite3 *pDB = NULL;//数据库指针
+    char * errMsg = NULL;//错误信息
+    std::string sqlstr;//SQL指令
+    int result;//sqlite3_exec返回值
+    
+    CCString* fileName = CCString::createWithFormat("%s/%s", CCFileUtils::sharedFileUtils()->getWritablePath().c_str(), "save.db");
+    
+    //打开一个数据库，如果该数据库不存在，则创建一个数据库文件
+    result = sqlite3_open(fileName->getCString(), &pDB);
+    if( result != SQLITE_OK )
+        CCLog( "打开数据库失败，错误码:%d ，错误原因:%s\n" , result, errMsg );
+    
+    //创建表，设置ID为主键，且自动增加
+    result=sqlite3_exec( pDB, "create table MyTable_1( ID integer primary key autoincrement, name nvarchar(32) ) " , NULL, NULL, &errMsg );
+    if( result != SQLITE_OK )
+        CCLog( "创建表失败，错误码:%d ，错误原因:%s\n" , result, errMsg );
+    
+    //插入数据
+    sqlstr=" insert into MyTable_1( name ) values ( '克塞' ) ";
+    result = sqlite3_exec( pDB, sqlstr.c_str() , NULL, NULL, &errMsg );
+    if(result != SQLITE_OK )
+        CCLog( "插入记录失败，错误码:%d ，错误原因:%s\n" , result, errMsg );
+    
+    //插入数据
+    sqlstr=" insert into MyTable_1( name ) values ( '葫芦娃' ) ";
+    result = sqlite3_exec( pDB, sqlstr.c_str() , NULL, NULL, &errMsg );
+    if(result != SQLITE_OK )
+        CCLog( "插入记录失败，错误码:%d ，错误原因:%s\n" , result, errMsg );
+    
+    //插入数据
+    sqlstr=" insert into MyTable_1( name ) values ( '擎天柱' ) ";
+    result = sqlite3_exec( pDB, sqlstr.c_str() , NULL, NULL, &errMsg );
+    if(result != SQLITE_OK )
+        CCLog( "插入记录失败，错误码:%d ，错误原因:%s\n" , result, errMsg ); 
+    
+    //关闭数据库 
+    sqlite3_close(pDB);
 }
 
 void Bag::initTestUILayer()

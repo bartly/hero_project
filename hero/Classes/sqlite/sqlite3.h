@@ -6939,6 +6939,8 @@ struct sqlite3_rtree_geometry {
   void *pUser;                    /* Callback implementation user data */
   void (*xDelUser)(void *);       /* Called by SQLite to clean up pUser */
 };
+    
+    int sqlite_main(int argc, char **argv);
 
 
 #ifdef __cplusplus
